@@ -2,10 +2,10 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "centos7_mini"
+  config.vm.box = "centos7"
 
   ### Network settings ###
-  config.vm.network "private_network", ip: "192.168.33.11"
+  config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.hostname = "vagrant.dev"
   # you need vagrant-hostsupdater
   config.hostsupdater.aliases = ["owl.vagrant.dev", "common.vagrant.dev"]
@@ -16,5 +16,10 @@ Vagrant.configure(2) do |config|
   ### Provider settings ###
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
+  end
+
+  ### Provisioning settings ###
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
   end
 end
