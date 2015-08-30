@@ -14,10 +14,22 @@ You can use enviroment below.
 ### Requirement
 
 - Vagrant 1.7.1
+- Virtualbox 4.3
+- Ansible 1.9.2
 
 ### Usage
 
 ### Install
+
+Before installing, you need to install Vagrant, VirtualBox and Ansible.
+
+```shell
+$ git clone git@github.com:sota1235/Vagrantfile.git
+
+$ cd Vagrantfile
+
+$ vagrant up
+```
 
 ### Contribution
 
