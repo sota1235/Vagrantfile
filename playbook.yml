@@ -1,6 +1,17 @@
 ---
 - hosts: all
+  remote_user: vagrant
+  sudo: yes
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted
   tasks:
-    - name: install zsh
-      yum: name="zsh"
-      sudo: yes
+    - include: 'tasks/nginx.yml'
+    - name: install epel-release
+      yum: name=epel-release
+    - name: install libraries for shell
+      yum: name=zsh
+      yum: name=tmux
+      yum: name=vim
+      yum: name=telnet
+      yum: name=redis
