@@ -5,10 +5,15 @@
   handlers:
     - name: restart nginx
       service: name=nginx state=restarted
+  vars_files:
+    - vars/main.yml
   tasks:
-    - include: 'tasks/nginx.yml'
-    - name: install epel-release
+    - name: add repository epel-release
       yum: name=epel-release
+    - name: add repository remi-repo
+      yum: name=http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+    - include: 'tasks/nginx.yml'
+    - include: 'tasks/php.yml'
     - name: install libraries for shell
       yum: name=zsh
       yum: name=tmux

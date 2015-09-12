@@ -1,0 +1,14 @@
+---
+sys_packages:
+  - "git"
+php_packages:
+  - "php"
+  - "php-fpm"
+  - "php-opcache"
+  - "php-devel"
+  - "php-mbstring"
+  - "php-mcrypt"
+  - "php-mysqlnd"
+  - "php-phpunit-PHPUnit"
+  - "php-pecl-xdebug"
+  - "php-pecl-xhprof"

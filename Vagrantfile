@@ -22,6 +22,6 @@ Vagrant.configure(2) do |config|
 
   ### Provisioning settings ###
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "playbook.yml"
+    ansible.playbook = "provisioning/playbook.yml"
   end
 end
