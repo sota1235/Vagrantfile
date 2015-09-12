@@ -9,6 +9,8 @@ Vagrant.configure(2) do |config|
   config.vm.hostname = "vagrant.dev"
   # you need vagrant-hostsupdater
   config.hostsupdater.aliases = ["owl.vagrant.dev", "common.vagrant.dev"]
+  # ssh forward agent
+  config.ssh.forward_agent = true
 
   ### Synced folder settings ###
   config.vm.synced_folder "./data", "/vagrant", mount_options: ['dmode=777','fmode=755']
