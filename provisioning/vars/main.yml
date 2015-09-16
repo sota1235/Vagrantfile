@@ -1,6 +1,14 @@
 ---
+repositories:
+  - "epel-release"
+  - "http://rpms.famillecollet.com/enterprise/remi-release-7.rpm"
 sys_packages:
   - "git"
+  - "zsh"
+  - "tmux"
+  - "vim"
+  - "telnet"
+  - "redis"
 php_packages:
   - "php"
   - "php-fpm"

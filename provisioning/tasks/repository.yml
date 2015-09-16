@@ -1,0 +1,3 @@
+- name: Install yum repository
+  yum: pkg={{ item }}
+  with_items: repositories

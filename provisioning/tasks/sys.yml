@@ -1,0 +1,3 @@
+- name: Install pakcages for system
+  yum: pkg={{ item }}
+  with_items: sys_packages

@@ -8,15 +8,7 @@
   vars_files:
     - vars/main.yml
   tasks:
-    - name: add repository epel-release
-      yum: name=epel-release
-    - name: add repository remi-repo
-      yum: name=http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+    - include: 'tasks/repository.yml'
     - include: 'tasks/nginx.yml'
     - include: 'tasks/php.yml'
-    - name: install libraries for shell
-      yum: name=zsh
-      yum: name=tmux
-      yum: name=vim
-      yum: name=telnet
-      yum: name=redis
+    - include: 'tasks/sys.yml'
