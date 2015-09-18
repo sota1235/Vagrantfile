@@ -1,0 +1,3 @@
+- name: Install sota1235/dotfiles
+  git: repo=git@github.com:sota1235/dotfiles.git dest=/home/vagrant/.dotfiles accept_hostkey=yes
+  sudo: no

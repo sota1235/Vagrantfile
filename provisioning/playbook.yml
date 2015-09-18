@@ -12,3 +12,4 @@
     - include: 'tasks/nginx.yml'
     - include: 'tasks/php.yml'
     - include: 'tasks/sys.yml'
+    - include: 'tasks/dotfiles.yml'
