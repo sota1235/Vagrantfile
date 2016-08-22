@@ -21,7 +21,15 @@ Vagrant.configure(2) do |config|
   end
 
   ### Provisioning settings ###
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "provisioning/playbook.yml"
+  # config.vm.provision "ansible" do |ansible|
+  #   ansible.playbook = "provisioning/playbook.yml"
+  # end
+
+  config.vm.provision :itamae do |itamae|
+    itamae.sudo = true
+
+    itamae.recipes = ['./itamae/recipe.rb']
+
+    itamae.json = './itamae/node.json'
   end
 end
