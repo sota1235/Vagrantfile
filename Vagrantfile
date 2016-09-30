@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "centos7"
+  config.vm.box = "bento/centos-7.2"
 
   ### Network settings ###
   config.vm.network "forwarded_port", guest: 80, host: 8080
